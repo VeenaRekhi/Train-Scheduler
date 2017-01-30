@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> TRAIN SCHEDULER!! </title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Kumar+One" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/css/flip.css">
+
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+
+
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flipper ">       
+       <div class="front" id="front">
+            <!-- front content -->
+
+            <div class="panel-body">
+              <div class="row text-center">
+                <div class="panel panel-default">
+                  <div class="panel-slider-heading">
+                    <h3> NEXT ARRIVAL :<span id="nextArrival">  </span></h3><br>
+                    <h3> ARRIVING TRAIN : <span id="arrivingTrainName"></span></h3><br>
+                    <h3> ARRIVAL TIME : <span id="nextArrivalTime"></span></h3><br>
+                    <img src="assets/images/header2.gif" width="310px" height="750px">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div><br>
+
+        <div class="back" id="back">
+            <!-- front content -->
+
+            <div class="panel-body">
+              <div class="row text-center">
+                <div class="panel panel-default">
+                  <div class="panel-slider-heading">
+                    <h3> NEXT ARRIVAL :<span id="nextArrival1">  </span></h3><br>
+                    <h3> ARRIVING TRAIN : <span id="arrivingTrainName1"></span></h3><br>
+                    <h3> ARRIVAL TIME : <span id="nextArrivalTime1"></span></h3><br>
+                    <img src="assets/images/Cool-Train-loop.gif" width="310px" height="750px">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div><br>
+       </div>
+      </div>
+     
+    </div>
+
+    <div class="col-sm-9 bbody">
+  
+        <div class="panel-heading" id="headline">
+                
+            <h1 class="panel-title text-center"><strong> UNC - Central-City Metro Station Wecomes You !! </strong></h1><br><br>
+               
+        </div>
+
+              <div class="panel-heading" id="next-Train">
+                <h4 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span><strong> Current trains On the Line !! </strong></h4></div>
+                
+                <div class="panel-body">
+            
+                <table  id="trainForm" >
+                    <thead>
+                        <th><h4>  Train Name </h4></th>
+                        <th><h4>  Destination </h4></th> 
+                        <th><h4>  Frequency (min) </h4></th>
+                        <th><h4>  Next Arrival </h4></th>
+                        <th><h4>  Minutes Away </h4></th>
+                        <th><h4><button class="btn btn-upDate" id="upDateTime" value="Update" type="Update"> UPDATE </button></h4></th>
+                        <th><h4><button class="btn btn-remove" id="remove" value="Remove" type="Remove"> REMOVE </button></h4></th>
+                    </thead>  
+                    <tbody>
+                        <td></td>
+                        <td></td> 
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                    </tbody>
+                </table>
+                </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading ">
+                    <h4 class="panel-title"><span class="glyphicon glyphicon-plus"></span><strong>  Add New Trains  </strong></h4></div>
+                  
+                    <div class="panel-body">
+                      <form role="form">
+
+                        <div class="form-group"> 
+                          <label for="name-input"> Train Name: </label><br>
+                          <input type="text" name="name" id="name" required>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="destination-input"> Destination: </label><br>
+                          <input type="text" name="destination" id="destination" required>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="firstTrainTime-input"> First Train Time (HH:mm - Military Time): </label><br>
+                          <input type="time" name="time" id="time" value="HH:mm" required> 
+                        </div>
+
+                        <div class="form-group">
+                          <label for="frequency-input"> Frequency (min): </label><br>
+                          <input type="text" id="frequency" name="frequency" required>
+                        </div>
+
+                        <button class="btn btn-default" id="add-train" value="Submit" type="submit"> Submit </button>
+
+                        <button class="btn btn-default" id="clear" value="Clear" type="clear"> Clear </button>
+
+                      </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="container-fluid text-center">
+
+        <p> @ COPYRIGHTS RESERVED: VEENA REKHI	</p>
+
+    </footer>
+
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+                <script
+          src="https://code.jquery.com/jquery-3.1.1.js"
+          integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+           crossorigin="anonymous"></script>
+
+    <script src="./assets/javascript/Firebase.js"></script> 
+
+</body>                    
+</html>                    
+
+
+
