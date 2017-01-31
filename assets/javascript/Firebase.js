@@ -210,3 +210,14 @@ $(".btn-remove").on('click', function(event) {
   }  // Setting a small interval for refreshing the data in firebase!
   var myWait = setTimeout(refreshData, 1000);
 });
+
+// Function to reset the page using "splice" remove all the newly added trains from the topics array.
+  //var originalTrainsLength = trains.length; // Variable used for "Clear" bitton.
+  //var newTrainsAdded = 0; // To determine position in the array where manually added trains start!!
+      //$("#clear").on("click", function() {
+        //document.getElementById("trainForm").innerHTML = ""; // remove all the images
+    //trains.splice(originalTrainsLength, newTrainsAdded); //Splice the array to restore to default state     
+        //document.getElementById("i").innerHTML = ""; // remove all the trains
+      //newTrainsAdded = 0; // reset the trains manually added
+    
+//});

@@ -37,9 +37,10 @@ span  {
   
 
 #headline  {
-    background-color: solid black;
+    
     box-shadow: 5px 5px 5px solid yellow;
     z-index:50;
+     background: transparent; 
     
 } 
 
@@ -96,8 +97,12 @@ span  {
     
 }
 
+.table-bordered  {
+      opacity: .8;
+}
+
 th, td {
-      
+      color: white;
       text-align: center;
       font-size: 18px;
       background-color: solid black;
@@ -106,13 +111,18 @@ th, td {
 tr:nth-child(even){background-color: solid black}
 
 th, h4 {
-      background-color: white;
+      background: transparent;      
       color: #5378f2;
       
 }
 
 .panel-body  {
-      background-color: #ffffff;
+      background: transparent;      
+
+}
+
+div .f1, .f2, .f3, .f4, .f5  {
+        background: transparent;      
 
 }
 
